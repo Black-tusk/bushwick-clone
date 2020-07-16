@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-family: "Lato", Helvetica;
+    font-size: 3.5em;
+    margin-bottom: 1em;
+}
+
+h2 {
+    font-family: "Lato", Helvetica;
+    color: rgb(119, 69, 83);
+    margin: 1.5em 0;
+}
+
+.top-nav {
+/*    height: 50px;*/
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 2.5em 3em 3em 4em;
+    text-transform: uppercase;
+    position: fixed;
+    top: -500px;
+    transition: all 0.3s ease-in;
+    z-index: 998;
+}
+
+.top-nav ul {
+    display: flex;
+    flex-direction: row;
+    float: left;
+    justify-content: center;
+}
+
+.top-nav li {
+    padding: 0 2em 0 0;
+}
+
+.top-nav a {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: rgb(119, 69, 83);
+    padding: 5px 0px;
+}
+
+.top-nav a:hover {
+    color: rgb(104, 173, 195);
+    border-bottom: 0.3rem solid rgb(195, 133, 150);
+}
+
+#checkbox {
+    display: none;
+}
+
+#menu {
+    position: fixed;
+    z-index: 999;
+    top: 1px;
+    right: 20px;
+    color: #fff;
+    font-size: 2.5em;
+    font-weight: 600;
+    cursor: pointer;
+    z-index: 999;
+    padding: 2rem 3rem 0 0;
+}
+
+#checkbox:checked ~ .top-nav {
+    top: 0px;
+}
+
+.entry-header {
+    color: #fff;
+    position: absolute;
+    bottom: 3.5em;
+    left: 5%;
+    padding: 1.5em;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.entry-header .entry-meta p {
+    padding: 0.2em 0;
+}
+
+.site-header {
+    min-height: 100vh;
+    width: 100%;
+    background: url(images/whistler.jpg);
+}
+
+.content-area {
+    display: block;
+    position: relative;
+}
+
+main {
+    padding: 3em 4em 4em 4em;
+    color: rgb(27, 27, 27);
+    line-height: 1.7em;
+}
+
+p {
+    margin-bottom: 1.5em;
+}
+
+.widget-area {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 0;
+    background: rgb(245, 245, 245);
+}
+
+.widget-content-box {
+    display: none;
+    padding: 1.5em 4em;
+    align-content: flex-start;
+    flex-direction: column;
+    flex-flow: column wrap;
+}
+
+.widget-content-box p {
+    color: rgb(104, 173, 195);
+    margin-bottom: 0.5em;
+}
+
+@media (max-width: 641px) {
+    .site-header {
+        min-height: 40vh;
+    }
+    .top-nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+    .top-nav li {
+        padding: 1em 0;
+        border-bottom: 1px solid gray;
+    }
+    .top-nav a:hover {
+        border-bottom: none;
+    }
+}
+@media (min-width: 1024px) {
+    .site-header {
+        position: fixed;
+        width: 35%;
+        float: left;
+    }
+    .content-area {
+        position: absolute;
+        right: 0;
+        width: 65%;
+    }
+    #menu {
+        color: rgb(119, 69, 83);
+        position: relative;
+        float: right;
+    }
+    .top-nav {
+        background: none;
+        top: 0;
+        position: relative;
+    }
+    .top-nav li #nav-home {
+        position: fixed;
+        top: 2.5rem;
+        left: 3rem;
+    }
+    .top-nav li {
+        padding: 0 2em 0 0;
+    }
+    #checkbox:checked ~ .widget-area {
+        height: 100vh;
+        display: flex;
+        transition: all 0.3s ease-in-out;
+    }
+    #checkbox:checked ~ .widget-area .widget-content-box {
+        display: flex;
+    }
+}
